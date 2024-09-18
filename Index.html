@@ -1,7 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Job Search Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- You can link to an external CSS file here -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Optional: Include a CSS framework like Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <style>
+        /* Basic CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navigation bar styles */
+        .navbar {
+            background-color: #007bff;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        /* Hero section styles */
+        .hero {
+            background-color: #f8f9fa;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+        /* Search form styles */
+        .search-form input[type="text"] {
+            padding: 10px;
+            width: 300px;
+        }
+        .search-form button {
+            padding: 10px 20px;
+        }
+        /* Featured jobs section */
+        .featured-jobs {
+            padding: 20px;
+        }
+        .job-listing {
+            border-bottom: 1px solid #dddddd;
+            padding: 15px 0;
+        }
+        .job-listing h3 {
+            margin: 0;
+        }
+        .job-listing p {
+            margin: 5px 0 0 0;
+            color: #555555;
+        }
+        /* Footer styles */
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Jobs</a>
+        <a href="#">Employers</a>
+        <a href="#">Contact</a>
+        <!-- Add more navigation links as needed -->
+    </div>
+
+    <!-- Hero Section with Search Form -->
+    <div class="hero">
+        <h1>Find Your Dream Job</h1>
+        <p>Search thousands of jobs from top companies.</p>
+        <form class="search-form" action="#" method="GET">
+            <input type="text" name="query" placeholder="Job title, keywords, or company">
+            <input type="text" name="location" placeholder="City, state, or zip code">
+            <button type="submit">Search Jobs</button>
+        </form>
+    </div>
+
+    <!-- Featured Jobs Section -->
+    <div class="featured-jobs">
+        <h2>Featured Jobs</h2>
+
+        <!-- Job Listing 1 -->
+        <div class="job-listing">
+            <h3>Software Engineer</h3>
+            <p>Company XYZ - San Francisco, CA</p>
+            <p><a href="#">View Job</a></p>
+        </div>
+
+        <!-- Job Listing 2 -->
+        <div class="job-listing">
+            <h3>Marketing Specialist</h3>
+            <p>ABC Corp - New York, NY</p>
+            <p><a href="#">View Job</a></p>
+        </div>
+
+        <!-- Job Listing 3 -->
+        <div class="job-listing">
+            <h3>Graphic Designer</h3>
+            <p>Design Studio - Austin, TX</p>
+            <p><a href="#">View Job</a></p>
+        </div>
+
+        <!-- Add more job listings as needed -->
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 Your Job Search Website. All rights reserved.</p>
+        <!-- Social media links -->
+        <p>
+            <a href="#" style="color: #ffffff; text-decoration: none; margin: 0 10px;">Facebook</a> |
+            <a href="#" style="color: #ffffff; text-decoration: none; margin: 0 10px;">Twitter</a> |
+            <a href="#" style="color: #ffffff; text-decoration: none; margin: 0 10px;">LinkedIn</a>
+        </p>
+    </div>
+
 </body>
-</html
+</html>
