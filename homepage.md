@@ -27,4 +27,36 @@ Start your career journey with the best internship opportunities.
 
 ---
 
+---
+layout: default
+title: Internship Job App
+permalink: /
+---
+
+# Welcome to InternHub!
+
+![App Logo](assets/logo.png)
+
+Start your career journey with the best internship opportunities.
+
+## Latest Internship Openings
+
+<div class="internship-list">
+  {% for internship in site.internships %}
+  <div class="internship-box">
+    <h2>{{ internship.title }}</h2>
+    <p><strong>Company:</strong> {{ internship.company }}</p>
+    <p><strong>Location:</strong> {{ internship.location }}</p>
+    <p><strong>Duration:</strong> {{ internship.duration }}</p>
+    <p>{{ internship.description }}</p>
+    <a href="{{ internship.apply_link }}">Apply Now</a>
+  </div>
+  {% endfor %}
+</div>
+
+## Why Choose Us?
+
+<!-- Rest of your content -->
+
+
 *© 2024 InternSurf. All rights reserved.*
