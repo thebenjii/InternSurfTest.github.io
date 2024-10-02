@@ -1,0 +1,32 @@
+/* assets/style.css */
+
+.internship-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .internship-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+  }
+  
+  .internship-box h2 {
+    font-size: 1.5em;
+  }
+  
+  .internship-box a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #0366d6;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .internship-box a:hover {
+    background-color: #024e9b;
+  }
+  

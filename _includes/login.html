@@ -1,0 +1,36 @@
+---
+layout: default
+title: Login
+permalink: /login.html
+---
+
+<h1>Login</h1>
+
+<form id="login-form">
+  <label for="login-email">Email:</label><br>
+  <input type="email" id="login-email" required><br><br>
+
+  <label for="login-password">Password:</label><br>
+  <input type="password" id="login-password" required><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<script>
+  const loginForm = document.getElementById('login-form');
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = loginForm['login-email'].value;
+    const password = loginForm['login-password'].value;
+    auth.signInWithEmailAndPassword(email, password)
+      .then(userCredential => {
+        // Logged in successfully
+        console.log('User logged in:', userCredential.user);
+        window.location.href = '/profile.html';
+      })
+      .catch(error => {
+        console.error('Error logging in:', error);
+        alert(error.message);
+      });
+  });
+</script>

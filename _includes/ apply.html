@@ -1,0 +1,73 @@
+<!-- _layouts/apply.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  {% include head.html %}
+  <title>Apply for {{ page.title }}</title>
+</head>
+<body>
+  {% include navigation.html %}
+
+  <h1>Apply for {{ page.internship_title }}</h1>
+
+  <form id="application-form">
+    <!-- Internship title (hidden) -->
+    <input type="hidden" id="internship-title" value="{{ page.internship_title }}">
+
+    <!-- Applicant's personal information -->
+    <label for="applicant-name">Name:</label><br>
+    <input type="text" id="applicant-name" required><br><br>
+
+    <label for="applicant-email">Email:</label><br>
+    <input type="email" id="applicant-email" required><br><br>
+
+    <label for="applicant-major">Major:</label><br>
+    <input type="text" id="applicant-major"><br><br>
+
+    <!-- Other fields as necessary -->
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <script>
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        // User is signed in
+        const applicationForm = document.getElementById('application-form');
+        applicationForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const internshipTitle = document.getElementById('internship-title').value;
+          const name = document.getElementById('applicant-name').value;
+          const email = document.getElementById('applicant-email').value;
+          const major = document.getElementById('applicant-major').value;
+          // Collect other form data as needed
+
+          db.collection('applications').add({
+            userId: user.uid,
+            internshipTitle: internshipTitle,
+            name: name,
+            email: email,
+            major: major,
+            status: 'Pending',
+            appliedAt: firebase.firestore.FieldValue.serverTimestamp()
+          })
+          .then(docRef => {
+            console.log('Application submitted with ID:', docRef.id);
+            alert('Application submitted successfully!');
+            window.location.href = '/profile.html';
+          })
+          .catch(error => {
+            console.error('Error submitting application:', error);
+            alert('Error submitting application: ' + error.message);
+          });
+        });
+      } else {
+        // No user is signed in, redirect to login
+        window.location.href = '/login.html';
+      }
+    });
+  </script>
+</body>
+</html>
+

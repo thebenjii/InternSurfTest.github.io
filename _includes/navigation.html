@@ -1,0 +1,50 @@
+<!-- _includes/navigation.html -->
+
+<nav>
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <span id="auth-links">
+      <!-- Authentication links will be inserted here -->
+    </span>
+  </nav>
+  
+  <script>
+    // Update navigation based on authentication state
+    auth.onAuthStateChanged(user => {
+      const authLinks = document.getElementById('auth-links');
+      if (user) {
+        authLinks.innerHTML = `
+          | <a href="/profile.html">Profile</a>
+          | <a href="#" id="logout-link">Logout</a>
+        `;
+        // Logout functionality
+        document.getElementById('logout-link').addEventListener('click', (e) => {
+          e.preventDefault();
+          auth.signOut().then(() => {
+            console.log('User signed out');
+            window.location.href = '/';
+          }).catch((error) => {
+            console.error('Error signing out:', error);
+          });
+        });
+      } else {
+        authLinks.innerHTML = `
+          | <a href="/login.html">Login</a>
+          | <a href="/signup.html">Sign Up</a>
+        `;
+      }
+    });
+  </script>
+
+  <!-- _layouts/default.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  {% include head.html %}
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  {% include navigation.html %}
+  {{ content }}
+</body>
+</html>
