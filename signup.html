@@ -1,0 +1,30 @@
+---
+layout: default
+title: Sign Up
+permalink: /signup.html
+---
+
+<h1>Sign Up</h1>
+
+<form action="https://formspree.io/f/your-form-id" method="POST">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="_replyto" required><br><br>
+
+  <label for="major">Major:</label><br>
+  <input type="text" id="major" name="major"><br><br>
+
+  <label for="contact">Contact Information:</label><br>
+  <textarea id="contact" name="contact" rows="4" cols="50"></textarea><br><br>
+
+  <!-- Additional Fields -->
+  <label for="university">University:</label><br>
+  <input type="text" id="university" name="university"><br><br>
+
+  <label for="graduation">Expected Graduation Date:</label><br>
+  <input type="date" id="graduation" name="graduation"><br><br>
+
+  <input type="submit" value="Sign Up">
+</form>
